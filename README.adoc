@@ -85,8 +85,8 @@ Login in ArgoCD, find out the admin password and create a token:
 kubectl get pods -n argocd | grep argocd-server
 
 # forward ports to access in browser
-kubectl -n argocd port-forward svc/argocd-server 8081:80
-kubectl -n tekton-pipelines port-forward svc/tekton-dashboard 9097:9097
+kubectl -n argocd port-forward svc/argocd-server 8081:80 --address='0.0.0.0' 
+kubectl -n tekton-pipelines port-forward svc/tekton-dashboard 9097:9097 --address='0.0.0.0'
 ----
 
 Create ArgoCD access with Tekton:
